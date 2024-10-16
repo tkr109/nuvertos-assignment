@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="navbar-title">
+        <a routerLink="/" class="navbar-link">Chemical Catalog</a>
+      </h1>
+    </div>
+  
+    <div class="navbar-right">
+      <button *ngIf="!authService.isLoggedIn()" class="btn login-btn" (click)="navigateToLogin()">
+        Login
+      </button>
+  
+      <div *ngIf="authService.isLoggedIn()" class="user-info">
+        <span class="username">{{ authService.getUsername() }}</span>
+        <button class="btn logout-btn" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+  

@@ -1,0 +1,47 @@
+<div class="details-container" *ngIf="compound">
+  <div class="details-header">
+    <h1>{{ compound.CompoundName }}</h1>
+  </div>
+
+  <div class="details-content">
+    <img [src]="compound.strImageSource" alt="Compound Image" class="details-image">
+    <p class="compound-description">{{ compound.CompounrDescription }}</p>
+  </div>
+
+  <div class="action-buttons">
+    <button class="btn update-btn"
+            [disabled]="!authService.isLoggedIn()"
+            (click)="openUpdateModal()"
+            [attr.title]="!authService.isLoggedIn() ? 'Please log in to make changes.' : ''">
+      Update
+    </button>
+
+ 
+    <button class="btn delete-btn"
+            [disabled]="!authService.isLoggedIn()"
+            (click)="deleteCompound()"
+            [attr.title]="!authService.isLoggedIn() ? 'Please log in to proceed with deletion.' : ''">
+      Delete
+    </button>
+  </div>
+</div>
+
+<!-- Update Modal -->
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Update Compound</h2>
+    <form (ngSubmit)="updateCompound()">
+      <label for="compoundName">Name:</label>
+      <input id="compoundName" [(ngModel)]="updatedCompound.CompoundName" name="compoundName" required>
+
+      <label for="compoundDescription">Description:</label>
+      <textarea id="compoundDescription" [(ngModel)]="updatedCompound.CompounrDescription" name="compoundDescription" required></textarea>
+
+      <label for="compoundImage">Image URL:</label>
+      <input id="compoundImage" [(ngModel)]="updatedCompound.strImageSource" name="compoundImage" required>
+
+      <button type="submit" class="btn save-btn">Save Changes</button>
+    </form>
+  </div>
+</div>

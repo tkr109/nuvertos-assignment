@@ -1,0 +1,130 @@
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+ 
+  .navbar-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+  
+ 
+  .navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+  }
+  
+ 
+  .navbar .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .navbar .btn:hover {
+    background-color: #45a049;
+  }
+  
+ 
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .username {
+    margin-right: 15px;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e53935;
+  }
+  
+ 
+  
+ 
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 0 20px;
+      height: 50px;
+    }
+  
+    .navbar-title {
+      font-size: 1.2rem;
+    }
+  
+    .navbar-right .btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
+ 
+  @media screen and (max-width: 480px) {
+    .navbar {
+      padding: 0 10px;
+      height: 50px;
+    }
+  
+    .navbar-title {
+      font-size: 1.1rem;
+    }
+  
+    .navbar-right .btn {
+      padding: 5px 12px;
+      font-size: 0.85rem;
+    }
+  
+    .navbar {
+      flex-direction: row;
+    }
+  
+    .navbar-right {
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+  
+
+ 
+.navbar-link {
+    text-decoration: none; 
+    color: inherit;        
+    cursor: pointer;       
+  }
+  
+  .navbar-link:hover {
+    color: #4caf50;
+  }
+  

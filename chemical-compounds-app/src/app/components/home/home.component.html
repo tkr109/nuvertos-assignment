@@ -1,0 +1,18 @@
+<div class="home-container">
+    <div class="title">Explore Chemical Compounds</div>
+    
+    <div class="card-grid">
+      <div *ngFor="let compound of compounds | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }" class="compound-card" (click)="onCardClick(compound.id)">
+        <div class="compound-card-image">
+          <img class="compound-image" [src]="compound.strImageSource" alt="{{ compound.CompoundName }} image">
+        </div>
+        <div class="card-content">
+          <h3>{{ compound.CompoundName }}</h3>
+          <p class="description-preview">{{ compound.CompounrDescription | slice: 0:100 }}...</p>
+        </div>
+      </div>
+    </div>
+  
+    <pagination-controls (pageChange)="currentPage = $event" ></pagination-controls>
+  </div>
+  
